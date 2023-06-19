@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"No test specified\"",
     "dev": "vite",
-    "build": "rimraf dist && cross-env NODE_ENV=production vite build",
+    "build": "vite build",
     "build:no-cache": "pnpm clean:cache && npm run build",
     "build-tsc": "vue-tsc --noEmit && vite build",
     "preview": "npm run build && vite preview",
@@ -60,7 +60,7 @@
     "echarts": "^5.4.2",
     "element-plus": "^2.3.1",
     "lodash-es": "^4.17.21",
-    "monaco-editor": "^0.39.0",
+    "monaco-editor": "0.39.0",
     "nanoid": "^4.0.2",
     "normalize.css": "^8.0.1",
     "path-browserify": "^1.0.1",

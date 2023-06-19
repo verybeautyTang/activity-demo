@@ -3,7 +3,7 @@ import { UserConfig, ConfigEnv, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import legacy from "@vitejs/plugin-legacy";
-import EnvironmentPlugin from "vite-plugin-environment";
+// import EnvironmentPlugin from "vite-plugin-environment";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
@@ -65,7 +65,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     build: {
       cssCodeSplit: true, // 如果设置为false，整个项目中的所有 CSS 将被提取到一个 CSS 文件中
       sourcemap: false, // 构建后是否生成 source map 文件。如果为 true，将会创建一个独立的 source map 文件
-      target: "modules", // 设置最终构建的浏览器兼容目标。默认值是一个 Vite 特有的值——'modules'  还可设置为 'es2015' 'es2016'等
+      // target: "modules", // 设置最终构建的浏览器兼容目标。默认值是一个 Vite 特有的值——'modules'  还可设置为 'es2015' 'es2016'等
       chunkSizeWarningLimit: 550, // 单位kb  打包后文件大小警告的限制 (文件大于此此值会出现警告)
       assetsInlineLimit: 4096, // 单位字节（1024等于1kb） 小于此阈值的导入或引用资源将内联为 base64 编码，以避免额外的 http 请求。设置为 0 可以完全禁用此项。
       minify: "terser", // 'terser' 相对较慢，但大多数情况下构建后的文件体积更小。'esbuild' 最小化混淆更快但构建后的文件相对更大。
@@ -76,6 +76,8 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         },
       },
       rollupOptions: {
+        // 增加后既正常
+        treeshake: false,
         input: {
           main: resolve(__dirname, "index.html"),
           preview: resolve(__dirname, "preview/index.html"),
@@ -100,12 +102,25 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       vue(),
       vueJsx(),
       // htmlTemplate(),
-      EnvironmentPlugin("all", { prefix: "VITE_APP_" }),
+      // EnvironmentPlugin("all", { prefix: "VITE_APP_" }),
       WindiCSS(),
       // https://github.com/sxzz/unplugin-vue-define-options
       DefineOptions(),
       legacy({
         targets: ["defaults", "not IE 11"],
+        // // false时则生成任何polyfill
+        // polyfills: true,
+        // // 添加自定义导入至基于es语言功能生成的polyfill中,例如额外的DOM API polyfill
+        // // additionalLegacyPolyfills: ["resize-observer-polyfill"],
+        // // 忽略@babel/preset-env的browserslist检测
+        // ignoreBrowserslistConfig: false,
+        // // 默认为false，为true时会会分开生成modern polyfill
+        // // 自定义可使用polyfill specifiers数组形式：['es.promise.finally', 'es/map', 'es/set', ...]
+        // modernPolyfills: false,
+        // // 默认为true，一般用在使用modernPolyfill为现代语法构建注入polyfill时设置为false
+        // renderLegacyChunks: true,
+        // // 默认为false，为true时systemjs/dist/s.min.js将不会包含在polyfills-legacy块中
+        // externalSystemJS: false,
       }),
       // https://github.com/antfu/unplugin-auto-import#readme
       AutoImport({
