@@ -1,0 +1,61 @@
+{
+  "ts-node": {
+    "transpileOnly": true
+  },
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": true,
+    "strictPropertyInitialization": false,
+    "downlevelIteration": true,
+    "types": ["vite/client", "node", "element-plus/global", "unplugin-vue-define-options"],
+    "typeRoots": ["./node_modules/@types/", "./types"],
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "baseUrl": ".",
+    "noEmitOnError": true,
+    "noEmit": true,
+    "noImplicitAny": false,
+    "paths": {
+      "@/*": ["src/*"],
+      "store/*": ["src/store/*"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+  },
+
+  "include": [
+    "src/**/*.ts",
+    "src/**/**/*.ts",
+    "src/**/*.vue",
+    "src/**/**/*.vue",
+    "types/**/*.d.ts",
+    "src/types/**/*.d.ts",
+    "types/auto-imports.d.tss.d.ts",
+    "FE/postcss.config.js",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/**/*.d.ts",
+    "types/**/*.ts",
+    "preview/**/*.ts",
+    "preview/**/*.d.ts",
+    "preview/**/*.tsx",
+    "preview/**/*.vue",
+    "components.d.ts",
+    "auto-imports.d.ts"
+  ],
+  "exclude": ["node_modules", "public/lib", "dist"]
+}
