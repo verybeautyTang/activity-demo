@@ -1,13 +1,29 @@
 <template>
-  <div class="pc-container">
-    <span>敬请期待ing</span>
-  </div>
+  <ActivityList :list="data"></ActivityList>
 </template>
-<style lang="scss" scoped>
-.pc-container {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  margin-top: 30%;
-}
-</style>
+<script lang="ts" setup>
+import ActivityList from "@/components/ActivityList/index.vue";
+const data = [
+  {
+    title: "pop官网",
+    iframe: "https://babytopia.oceangames.com/home",
+    desc: "",
+  },
+  {
+    title: "ninja官网",
+    iframe: "https://ninja.oceangames.com/",
+    desc: "",
+  },
+  {
+    title: "sh01-h5",
+    iframe:
+      "https://ff.happyelements.com/activites/sh01-miniprogram/holiday/#/",
+    desc: "",
+  },
+  {
+    title: "sh01官网",
+    iframe: " https://ff.happyelements.com/activites/sh01/",
+    desc: "",
+  },
+];
+</script>

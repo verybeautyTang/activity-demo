@@ -20,11 +20,16 @@
     "checkJs": true,
     "strictPropertyInitialization": false,
     "downlevelIteration": true,
-    "types": ["vite/client", "node", "element-plus/global", "unplugin-vue-define-options"],
+    "types": [
+      "vite/client",
+      "node",
+      "element-plus/global",
+      "unplugin-vue-define-options"
+    ],
     "typeRoots": ["./node_modules/@types/", "./types"],
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "noEmitOnError": true,
     "noEmit": true,
     "noImplicitAny": false,
@@ -32,7 +37,7 @@
       "@/*": ["src/*"],
       "store/*": ["src/store/*"]
     },
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
 
   "include": [

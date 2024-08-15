@@ -24,7 +24,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
   // 获取 .env 环境配置文件
   const { env } = loadEnv(mode, CWD);
   return {
-    base: env,
+    base: "./",
     resolve: {
       alias: {
         "@": `${pathSrc}/`,

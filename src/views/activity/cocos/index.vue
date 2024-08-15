@@ -12,7 +12,7 @@ const data = [
   },
   {
     title: "游戏类",
-    iframe: "http://ff.happyelements.com/act/xxlhorse/",
+    iframe: "https://ff.happyelements.com/act/xxlhorse/",
     desc: "",
   },
   {
